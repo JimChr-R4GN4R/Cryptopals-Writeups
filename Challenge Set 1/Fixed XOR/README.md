@@ -14,4 +14,6 @@ If your function works properly, then when you feed it the string:
 
 ########################################################
 
-I made a script in python3 which
+I made a script in python3  takes the two hex values, then converts them to binary and XORes them.
+
+The result will be in decimal format,so then I made it to convert from decimal to hex and boom!
