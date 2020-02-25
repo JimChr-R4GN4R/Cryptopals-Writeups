@@ -2,16 +2,12 @@ a = '1c0111001f010100061a024b53535009181c'
 b = '686974207468652062756c6c277320657965'
 
 
-
 def XOR(a_hex,b_hex):
-  a_binary = bin(int(a_hex, 16))[2:]
-  b_binary = bin(int(b_hex, 16))[2:]
+  a_binary = bin(int(a_hex, 16))[2:] # convert from hex to binary
+  b_binary = bin(int(b_hex, 16))[2:] # convert from hex to binary
   a_binaryXOR_b_binary = int(a_binary,2) ^ int(b_binary,2) # a_binaryXOR_b_binary is in decimal format
   a_binaryXOR_b_binary = hex(a_binaryXOR_b_binary).split('x')[-1] # convert from decimal to hex
   print(a_binaryXOR_b_binary)
-
-
-
 
 
 XOR(a,b)
