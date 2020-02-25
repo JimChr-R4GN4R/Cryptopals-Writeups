@@ -7,3 +7,11 @@ Should produce:
 `SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t`
 
 So go ahead and make that happen. You'll need to use this code for the rest of the exercises. 
+
+#########################################################
+
+So we have to convert the first text from HEX to base64.
+
+I used this: http://tomeko.net/online_tools/hex_to_base64.php?lang=en
+
+And got the correct result.
