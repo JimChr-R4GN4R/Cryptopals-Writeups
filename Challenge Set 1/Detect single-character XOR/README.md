@@ -9,3 +9,5 @@ Find it.
 So I edited a bit the previous script and found the flag by checking the higest scored texts.
 
 <code>python3 script.py</code>
+
+Flag: Now that the party is jumping
