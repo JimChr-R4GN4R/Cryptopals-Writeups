@@ -3,7 +3,7 @@ from Crypto.Cipher import AES
 
 
 
-ciphertext = open("text.txt") # Here you put ciphertext's file
+ciphertext = open("ctexts.txt.txt") # Here you put ciphertext's file
 ciphertext = ciphertext.read()
 
 ciphertext = base64.b64decode(ciphertext)
