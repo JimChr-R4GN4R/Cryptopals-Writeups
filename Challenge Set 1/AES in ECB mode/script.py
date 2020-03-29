@@ -1,10 +1,21 @@
 import base64
 from Crypto.Cipher import AES
-key = b'YELLOW SUBMARINE'
 
-with open('ctexts.txt') as texts:
-  ciphertext = base64.b64decode(texts.read())
 
-  cipher = AES.new(key, AES.MODE_ECB)
-  plaintext = cipher.decrypt(ciphertext)
-  print(plaintext)
+
+ciphertext = open("text.txt") # Here you put ciphertext's file
+ciphertext = ciphertext.read()
+
+ciphertext = base64.b64decode(ciphertext)
+
+key = 'YELLOW SUBMARINE' # here you put the key /// 16, 24 or 32 bytes long for AES-128, AES-192 or AES-256 
+
+decipher = AES.new(key, AES.MODE_ECB)
+
+decrypted_text = decipher.decrypt(ciphertext)
+
+print(decrypted_text.decode())
+
+
+
+#print(ciphertext)
