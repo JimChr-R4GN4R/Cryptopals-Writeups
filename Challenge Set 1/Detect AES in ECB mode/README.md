@@ -22,3 +22,5 @@ If no,then go to doctor to check you eyes :P ,
 but if you do, then this is because this image was encrypted with AES ECB. That means every pixel of the image was encrypted with the same key.
 
 So if a pixel has the same color with another pixel, then the encrypted result will be the same.
+
+You can check this video out to understand ECB systems better: https://www.youtube.com/watch?v=uPiqyQOMH1E
