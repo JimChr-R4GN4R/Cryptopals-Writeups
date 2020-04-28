@@ -31,6 +31,30 @@ So let's say black color pixels have value 'B', then if we encrypt it with key `
 
 You can check this video out to understand ECB systems better: https://www.youtube.com/watch?v=uPiqyQOMH1E
 
+By having the above in your mind, let's take this example:
+
+we have our `plaintext1 = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'` (which is 'a' 32 times) because by default `block size = 16` and we need a plaintext which is more than 16 in size.
+
+And we have `plaintext2 = 'aaaaaaaaaaaaaaaa'` (which is 'a' 16 times).
+
+
+If we encrypt them with `key = '1234567891234567'`, then we will take these: 
+
+```
+ciphertext1 = 19311A27364DC24DB32547A989BB26D819311A27364DC24DB32547A989BB26D85455DE1A13DB984F667D07A0DA28B074
+ciphertext2 = 19311A27364DC24DB32547A989BB26D85455DE1A13DB984F667D07A0DA28B074
+```
+
+hmmm... Do you see something...?
+
+No? Let's split them by 32.
+
+```
+ciphertext1 = 19311A27364DC24DB32547A989BB26D8 19311A27364DC24DB32547A989BB26D8 5455DE1A13DB984F667D07A0DA28B074
+ciphertext2 = 19311A27364DC24DB32547A989BB26D8                                  5455DE1A13DB984F667D07A0DA28B074
+
+```
+
 So our task is to find the line which has the same 32bit hex string more than 1 times.
 
 So let's start making our python3 script!
