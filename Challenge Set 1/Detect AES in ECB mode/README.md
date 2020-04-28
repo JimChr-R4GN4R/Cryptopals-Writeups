@@ -23,4 +23,4 @@ but if you do, then this is because this image was encrypted with AES ECB. That 
 
 So if a pixel has the same color with another pixel, then the encrypted result will be the same.
 
-You can check this video out to understand ECB systems better: https://www.youtube.com/watch?v=uPiqyQOMH1E
+You can check this video out to understand ECB systems better: ![video](https://www.youtube.com/watch?v=uPiqyQOMH1E)
