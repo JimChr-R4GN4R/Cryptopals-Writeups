@@ -18,7 +18,7 @@ Do you see this image?
 
 Can you recognize what it shows?
 
-If no,then go to a doctor to check you eyes :P ,
+If no,then go to a doctor to check your eyes :P ,
 but if you do, then this is because this image was encrypted with AES ECB. That means every pixel of the image was encrypted with the same key.
 
 So if a pixel has the same color with another pixel, then the encrypted result will be the same.
