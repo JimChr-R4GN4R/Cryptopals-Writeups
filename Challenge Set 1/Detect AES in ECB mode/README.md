@@ -52,7 +52,7 @@ for current_hex in ciphertext:
   line += 1 # line = line + 1
 ```
 
-Next we want to compare all the parts of `current_hex` and count the same parts:
+Next we want to compare all the parts of `current_hex` and count the same parts and if a part is appeared more than one times,then print the current_hex with the number of the line you found it:
 ```
 for current_hex in ciphertext:
   current_hex = wrap(current_hex, 32) # https://stackoverflow.com/questions/9475241/split-string-every-nth-character
@@ -73,3 +73,5 @@ for current_hex in ciphertext:
             print('\033[91m'+item+'\033[0m', ':', current_hex.count(item),'times has been found')
             break
 ```
+
+Done!
