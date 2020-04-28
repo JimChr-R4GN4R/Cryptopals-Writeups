@@ -98,4 +98,5 @@ Now if you are new with AES ECB, then you may have a question...
 If I have a plaintext which is smaller or generally not multiple by key's length, then what happens?
 The answer is `Padding`!
 
-Check this video out : https://www.youtube.com/watch?v=R3NosHMSi0o and your question will be answerd from 2:45 ;)
+Check this video out : https://www.youtube.com/watch?v=R3NosHMSi0o and your question will be answerd from 2:45 ,
+and check this out after the video: http://hextodecimal.com/index.php?hex=0B , it may help ;)
