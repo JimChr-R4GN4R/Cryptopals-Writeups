@@ -23,11 +23,11 @@ but if you do, then this is because this image was encrypted with AES ECB. That 
 
 So if a pixel has the same color with another pixel, then the encrypted result will be the same.
 
-Let's say we encrypt 'Hello' with AES ECB 128bit with the key `1234567891234567` which is 16bit key,
+Let's say we encrypt 'Hello' with AES ECB 128bit with the key `1234567891234567` which is 16 bytes key,
 
 the result will be `3892EFAB6427AB1568092CD2262387D5` always.
 
-So let's say black color pixels have value 'B', then if we encrypt it with key `1234567891234567`, then I will get `BC395B3316D18C490C4BABE2E6F81912` always and we can see that it's 32bit.
+So let's say black color pixels have value 'B', then if we encrypt it with key `1234567891234567`, then I will get `BC395B3316D18C490C4BABE2E6F81912` always and we can see that it's 32 bytes (cause every character in hex,has 2bytes).
 
 You can check this video out to understand ECB systems better: https://www.youtube.com/watch?v=uPiqyQOMH1E
 
@@ -35,10 +35,17 @@ So our task is to find the line which has the same 32bit hex string more than 1 
 
 So let's start making our python3 script!
 
-Open,read and then split line by line the .txt file
+Open,read and then split line by line the .txt file and add a line counter:
 ```
 ciphertext = open("ctexts.txt")
 ciphertext = ciphertext.read()
 ciphertext = ciphertext.split('\n')
 
+line = 0
+```
+
+Next make a loop that takes every line and splits it to 16 bytes (because the key he used to encrypt it is 16 bytes):
+```
+for current_hex in ciphertext:
+  current_hex = wrap(current_hex, 32) # https://stackoverflow.com/questions/9475241/split-string-every-nth-character
 ```
