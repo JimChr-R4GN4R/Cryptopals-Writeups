@@ -23,10 +23,12 @@ but if you do, then this is because this image was encrypted with AES ECB. That 
 
 So if a pixel has the same color with another pixel, then the encrypted result will be the same.
 
-Let's say we encrypt 'Hello' with AES ECB 128bit with the key `1234567891234567` which is 16bit key.
+Let's say we encrypt 'Hello' with AES ECB 128bit with the key `1234567891234567` which is 16bit key,
 
-The result will be `3892EFAB6427AB1568092CD2262387D5` always.
+the result will be `3892EFAB6427AB1568092CD2262387D5` always.
 
-So let's say black color pixels have value 'B', then if we encrypt it with key `1234567891234567`, then I will get `BC395B3316D18C490C4BABE2E6F81912` always.
+So let's say black color pixels have value 'B', then if we encrypt it with key `1234567891234567`, then I will get `BC395B3316D18C490C4BABE2E6F81912` always and we can see that it's 32bit.
 
 You can check this video out to understand ECB systems better: https://www.youtube.com/watch?v=uPiqyQOMH1E
+
+So our task is to find the line which has the same 32bit hex string more than 1 times.
