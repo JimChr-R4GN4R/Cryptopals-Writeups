@@ -32,3 +32,13 @@ So let's say black color pixels have value 'B', then if we encrypt it with key `
 You can check this video out to understand ECB systems better: https://www.youtube.com/watch?v=uPiqyQOMH1E
 
 So our task is to find the line which has the same 32bit hex string more than 1 times.
+
+So let's start making our python3 script!
+
+Open,read and then split line by line the .txt file
+```
+ciphertext = open("ctexts.txt")
+ciphertext = ciphertext.read()
+ciphertext = ciphertext.split('\n')
+
+```
