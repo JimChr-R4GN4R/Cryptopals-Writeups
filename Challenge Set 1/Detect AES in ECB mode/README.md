@@ -12,4 +12,4 @@ So let's begin!
 
 First of all we have to understand what ECB actually is...
 
-image1[https://raw.githubusercontent.com/pakesson/diy-ecb-penguin/master/Tux_ecb.png]
+!image1(https://raw.githubusercontent.com/pakesson/diy-ecb-penguin/master/Tux_ecb.png)
