@@ -23,17 +23,11 @@ but if you do, then this is because this image was encrypted with AES ECB. That 
 
 So if a pixel has the same color with another pixel, then the encrypted result will be the same.
 
-Let's say we encrypt 'Hello' with AES ECB 128bit with the key `1234567891234567` which is 16 bytes key,
-
-the result will be `3892EFAB6427AB1568092CD2262387D5` always.
-
-So let's say black color pixels have value 'B', then if we encrypt it with key `1234567891234567`, then I will get `BC395B3316D18C490C4BABE2E6F81912` always and we can see that it's 32 bytes (cause every character in hex,has 2bytes).
-
 You can check this video out to understand ECB systems better: https://www.youtube.com/watch?v=uPiqyQOMH1E
 
 By having the above in your mind, let's take this example:
 
-we have our `plaintext1 = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'` (which is 'a' 32 times) because by default `block size = 16` and we need a plaintext which is more than 16 in size.
+we have our `plaintext1 = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'` (which is 'a' 32 times to be multiple of 16) because `block size = 16`.
 
 And we have `plaintext2 = 'aaaaaaaaaaaaaaaa'` (which is 'a' 16 times).
 
@@ -41,8 +35,8 @@ And we have `plaintext2 = 'aaaaaaaaaaaaaaaa'` (which is 'a' 16 times).
 If we encrypt them with `key = '1234567891234567'`, then we will take these: 
 
 ```
-ciphertext1 = 19311A27364DC24DB32547A989BB26D819311A27364DC24DB32547A989BB26D85455DE1A13DB984F667D07A0DA28B074
-ciphertext2 = 19311A27364DC24DB32547A989BB26D85455DE1A13DB984F667D07A0DA28B074
+ciphertext1 = 19311a27364dc24db32547a989bb26d819311a27364dc24db32547a989bb26d8
+ciphertext2 = 19311a27364dc24db32547a989bb26d8
 ```
 
 hmmm... Do you see something...?
@@ -50,10 +44,10 @@ hmmm... Do you see something...?
 No? Let's split them by 32.
 
 ```
-ciphertext1 = 19311A27364DC24DB32547A989BB26D8 19311A27364DC24DB32547A989BB26D8 5455DE1A13DB984F667D07A0DA28B074
-ciphertext2 = 19311A27364DC24DB32547A989BB26D8                                  5455DE1A13DB984F667D07A0DA28B074
-
+ciphertext1 = 19311A27364DC24DB32547A989BB26D8 19311A27364DC24DB32547A989BB26D8
+ciphertext2 = 19311A27364DC24DB32547A989BB26D8
 ```
+This is a sign of AES ECB encryption!
 
 So our task is to find the line which has the same 32bit hex string more than 1 times.
 
@@ -99,3 +93,9 @@ for current_hex in ciphertext:
 ```
 
 Done!
+
+Now if you are new with AES ECB, then you may have a question...
+If I have a plaintext which is smaller or generally not multiple by key's length, then what happens?
+The answer is `Padding`!
+
+Check this video out : https://www.youtube.com/watch?v=R3NosHMSi0o and your question will be answerd from 2:45 ;)
