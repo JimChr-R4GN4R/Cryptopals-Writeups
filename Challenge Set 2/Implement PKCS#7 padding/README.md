@@ -23,6 +23,6 @@ So we have our `plaintext = "YELLOW SUBMARINE"`
 
 our `plaintext` has `length = 16`. If our `block size = 20`, then we have to fill the rest 4 blocks.
 
-So PKCS#7 methods says that the rest blocks will be filled with the hex number of the rest blocks (here the number of the rest blocks is `4`).
+So PKCS#7 method says that the rest blocks will be filled with the hex number of the rest blocks (here the number of the rest blocks is `4`).
 
 So the padded plaintext should be like this: `YELLOW SUBMARINE\x04\x04\x04\x04`
